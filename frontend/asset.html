@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ecosafi - Assets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --border: #e2e8f0;
+
+      --brand: #065f46;
+      --brand-hover: #047857;
+      --brand-soft: #ecfdf5;
+
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* -----------------------------
+       Navigation (same as landing)
+    ------------------------------*/
+    nav {
+      height: 60px;
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d1fae5;
+      font-size: 15.5px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-right button {
+      background: white;
+      color: var(--brand);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    /* -----------------------------
+       Assets Page
+    ------------------------------*/
+    main {
+      flex: 1;
+      padding: 40px 24px;
+    }
+
+    .assets-page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .assets-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .assets-header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .assets-header p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .assets-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .assets-actions input {
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      width: 220px;
+    }
+
+    .assets-actions button {
+      background: var(--brand);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* -----------------------------
+       Table Card
+    ------------------------------*/
+    .assets-table-wrapper {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: #f1f5f9;
+    }
+
+    th {
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-align: left;
+    }
+
+    td {
+      padding: 16px 18px;
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    /* -----------------------------
+       Status Pills
+    ------------------------------*/
+    .status {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .status.active {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .status.broken {
+      background: #fff7ed;
+      color: #c2410c;
+    }
+
+    .status.stolen {
+      background: #fef2f2;
+      color: #b91c1c;
+    }
+
+    .actions {
+      text-align: right;
+      font-size: 18px;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <div class="logo">
+        <a href="../frontend/index.html" class="logo">
+    <img src="logo.webp" alt="Ecosafi Home">
+  </a>
+      </div>
+      <div class="nav-links">
+        <a href="../frontend/asset.html">Assets</a>
+        <a href="#">Employees</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button>+ Add Asset</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="assets-page">
+      <div class="assets-header">
+        <div>
+          <h1>Assets</h1>
+          <p>View and manage company assets</p>
+        </div>
+
+        <div class="assets-actions">
+          <input type="text" placeholder="Search assets..." />
+        </div>
+      </div>
+
+      <div class="assets-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Asset Tag</th>
+              <th>Type</th>
+              <th>Assigned To</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LAP-1023</td>
+              <td>Laptop</td>
+              <td>Jane Doe</td>
+              <td><span class="status active">Active</span></td>
+              <td class="actions">⋮</td>
+            </tr>
+
+            <tr>
+              <td>PHN-8821</td>
+              <td>Phone</td>
+              <td>—</td>
+              <td><span class="status stolen">Stolen</span></td>
+              <td class="actions">⋮</td>
+            </tr>
+
+            <tr>
+              <td>MON-3310</td>
+              <td>Monitor</td>
+              <td>John Smith</td>
+              <td><span class="status broken">Broken</span></td>
+              <td class="actions">⋮</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Internal Asset Management System
+  </footer>
+
+</body>
+</html>
